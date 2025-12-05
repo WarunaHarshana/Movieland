@@ -119,3 +119,38 @@ function searchCategory(category){
 
 }
 
+
+function loadTopRatedMovies() {
+
+    const topRatedGrid = document.getElementById('topRatedGrid');
+    
+
+    const topMovies = ['tt0111161', 'tt0068646', 'tt0468569', 'tt0110912'];
+
+    topMovies.forEach(id => {
+        const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&i=${id}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if(data.Response === "True") {
+                    topRatedGrid.innerHTML += `
+                        <div class="col-md-3 mb-3">
+                            <div class="card h-100 bg-dark text-white border-warning">
+                                <img src="${data.Poster}" class="card-img-top" alt="${data.Title}" style="width: 100%; height: auto;">
+                                
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-title text-truncate">${data.Title}</h6>
+                                    <p class="card-text text-warning">⭐ ${data.imdbRating}</p>
+                                    
+                                    <button class="btn btn-primary btn-sm w-100 mt-auto" onclick="getMovieDetails('${data.imdbID}')">More Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+    });
+}
+
+loadTopRatedMovies();
