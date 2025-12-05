@@ -1,0 +1,65 @@
+body {
+    background-color: #141414; 
+    color: #ffffff; 
+    font-family: sans-serif;
+}
+
+
+.navbar {
+    background-color: #000000 !important; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8); 
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #f2f0f0 !important; 
+    font-size: 1.5rem;
+}
+
+
+.card {
+    background-color: #1f1f1f; 
+    border: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+}
+
+.card-img-top {
+    border-radius: 5px 5px 0 0;
+}
+
+
+.btn-primary {
+    background: linear-gradient(45deg, #0d6efd, #0043a8);
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #ff9800);
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #333;
+    border: 1px solid #444;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: #444;
+    color: white;
+    border-color: #e50914;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: #bbb;
+}
