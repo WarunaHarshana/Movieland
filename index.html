@@ -4,105 +4,69 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MovieLand</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" onclick="window.location.reload()">MovieLand 🎬</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Action')">Action</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Adventure')">Adventure</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Comedy')">Comedy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Horror')">Horror</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Romance')">Romance</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Thriller')">Thriller</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Science fiction')">Si-Fi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Fantacy')">Fantacy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('War')">War</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Animated')">Animated</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Crime')">Crime</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Sports')">Sports</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Drama')">Drama</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('History')">History</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('Mystery')">Mystery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="searchCategory('TV Series')">TV Series</a>
-            </li>
-            
-            <li class="nav-item">
-              <button class="btn btn-warning ms-lg-3 fw-bold" onclick="discoverMovie()">🎲 Discover Movie</button>
-            </li>
-
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#" onclick="window.location.reload()">Movie<span>Land</span></a>
+        
+        <div class="" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Action')">Action</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Adventure')">Adventure</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Comedy')">Comedy</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Horror')">Horror</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Sci-Fi')">Sci-Fi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Drama')">Drama</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="searchCategory('Mystery')">Mystery</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <div class="container">
 
-    <div class="container mt-5">
-
-      <h1 class="text-center">MovieLand 🎬</h1>
-
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="movieInput" placeholder="Enter movie name...">
-                    <button class="btn btn-primary" type="button" id="searchBtn">Search</button>
-                </div>
-            </div>
+      <section class="hero-section">
+        <h1 class="hero-title">Find your next movie.</h1>
+        
+        <div class="search-wrapper">
+          <input type="text" class="search-input" id="movieInput" placeholder="Search for movies, TV shows..." autocomplete="off">
+          <button class="search-btn" id="searchBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
         </div>
+        
+        <button class="discover-btn" onclick="discoverMovie()">
+          🎲 Find a random movie
+        </button>
+      </section>
 
-        <div id="movieResult" class="mt-4 text-center"></div>
+      <div id="movieResult"></div>
 
-        <div id="movieResult" class="mt-4 text-center"></div>
-
-      <div class="mt-5 mb-5">
-        <h3 class="text-warning border-bottom pb-2">⭐ Top Rated Movies</h3>
-        <div id="topRatedGrid" class="row mt-3">
+      <div class="mt-5 mb-5" id="topRatedSection">
+        <div class="section-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--accent-color)" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+            <h3 class="section-title">Top Rated Movies</h3>
+        </div>
+        <div id="topRatedGrid" class="row g-4">
           </div>
       </div>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
     
-    </body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
